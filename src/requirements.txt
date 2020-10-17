@@ -1,0 +1,4 @@
+google-cloud-storage==1.31.0
+google-cloud-bigquery==1.28.0
+opentelemetry-api==0.9b0
+opentelemetry-exporter-google-cloud==0.13b0
