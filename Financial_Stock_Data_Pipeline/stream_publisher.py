@@ -1,16 +1,16 @@
-#from google.cloud import pubsub
+from google.cloud import pubsub
 from time import sleep
 import datetime
 import csv
 import json
 import random
 
-#publisher = pubsub.PublisherClient()
+publisher = pubsub.PublisherClient()
 
-#project = " "
-#topic = " "
+project = "data228-final"
+topic = "data228-in"
 
-#topic_path = publisher.topic_path(project, topic)
+topic_path = publisher.topic_path(project, topic)
 
 json_dict = {}
 
@@ -28,8 +28,8 @@ with open('./source_data/aapl_streaming_apr.csv', 'r') as csvfile:
             json_dict['adj_close'] = float(row[6])
             json_dict['volume'] = int(row[7])
             jstr = json.dumps(json_dict)
-            #print("Publishing {} to {} at {}...".format(jstr, topic_path, datetime.datetime.now()))
-            #publisher.publish(topic_path, bytes(jstr, "utf-8"))
+            print("Publishing {} to {} at {}...".format(jstr, topic_path, datetime.datetime.now()))
+            publisher.publish(topic_path, bytes(jstr, "utf-8"))
             print(jstr)
             json_dict.clear()
             sleep(random.randint(1, 3))

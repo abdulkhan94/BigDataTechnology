@@ -1,0 +1,4 @@
+google-cloud-storage==1.33.0
+Google-cloud-pubsub==2.1.0
+google-cloud-bigquery==2.4.0
+
