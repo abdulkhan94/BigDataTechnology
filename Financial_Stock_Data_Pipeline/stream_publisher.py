@@ -14,7 +14,7 @@ topic_path = publisher.topic_path(project, topic)
 
 json_dict = {}
 
-with open('./source_data/aapl_streaming_apr.csv', 'r') as csvfile:
+with open('./source_data/aapl_streaming_test.csv', 'r') as csvfile:
     spamreader = csv.reader(csvfile)
     next(spamreader)
     for row in spamreader:
